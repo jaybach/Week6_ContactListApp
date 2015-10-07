@@ -4,10 +4,20 @@
 
 // alert("submitted form");
 $(function() {
-  var newContact = $('#add-contact');
+  var newContactForm = $('#add-contact');
+  var editContactForm = $('#edit-contact');
   var contactsList = $('.contacts');
 
-  newContact.on('submit', function() {
+  editContactForm.on('reset', function() {
+    editContactForm.remove();
+  });
+
+  contactsList.on('click', '.edit', function() {
+    editContactForm.css('display', 'block');
+
+  });
+
+  newContactForm.on('submit', function() {
 
     $.ajax({
 
@@ -18,9 +28,9 @@ $(function() {
       // use that json to append to the html
 
       // action and method below refer to the html form stuff from index.erb:  <form id="add-contact" action="/" method="post">
-      url: newContact.attr('action'),
-      method: newContact.attr('method'),
-      data: newContact.serialize(),
+      url: newContactForm.attr('action'),
+      method: newContactForm.attr('method'),
+      data: newContactForm.serialize(),
       dataType: 'json',
       success: function(contact) {
         // the below empties out the form inputs when the form is submitted
