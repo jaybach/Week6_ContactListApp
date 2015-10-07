@@ -16,8 +16,10 @@ $(function() {
     editContactForm.css('display', 'block');
     var contactEdit = $(this).closest('.contact');
     var editName = contactEdit.find('.contact-name').text();
+    // the below puts the current name into the first edit contact field
     editContactForm.find('[name=name]').val(editName);
     var editEmail = contactEdit.find('.contact-email').text();
+    // the below puts the current name into the second edit contact field
     editContactForm.find('[name=email]').val(editEmail);
     contactEdit.append(editContactForm);
   });
