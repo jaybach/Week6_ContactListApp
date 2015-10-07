@@ -22,6 +22,19 @@ $(function() {
     // the below puts the current name into the second edit contact field
     editContactForm.find('[name=email]').val(editEmail);
     contactEdit.append(editContactForm);
+    // debugger
+  });
+
+    // function getContactHTML(contact) {
+    //   return '<div class="contact"><h4>' + contact.name + '</h4><h5>' + contact.email + '</h5></div><hr>';
+    // };
+
+// for stuff on active record updating see http://guides.rubyonrails.org/active_record_basics.html
+  editContactForm.on('submit', function() {
+    $.ajax({
+
+      // dont' for get to return false
+    });
   });
 
   newContactForm.on('submit', function() {
@@ -54,7 +67,7 @@ $(function() {
 
     function getContactHTML(contact) {
       return '<div class="contact"><h4>' + contact.name + '</h4><h5>' + contact.email + '</h5></div><hr>';
-    }
+    };
 
 });
 
