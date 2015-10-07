@@ -1,0 +1,35 @@
+<!doctype html>
+<html lnag="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contacts</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/application.js"></script>
+</head>
+
+<body>
+
+<h1>Welcome to your contacts list!</h1>
+<br>
+
+<h2>Add a contact:</h2>
+<form id="add-contact" action="/" method="post">
+  <label>Name:</label>
+  <input type="text" id="name" name="name" placeholder="Name"><br><br>
+  <label>Email address:</label>
+  <input type="email" id="email" name="email" placeholder="email"><br><br>
+  <input type="submit" value="Add contact">
+</form>
+<br>
+<br>
+
+<h2>Contacts:</h2>
+<% @contacts.each do |contact| %>
+  <div class="contact">
+    <h4><%= contact.name %></h4>
+    <h5><%= contact.email %></h5>
+    <hr>
+  </div>
+<% end %>
+
+</body>
