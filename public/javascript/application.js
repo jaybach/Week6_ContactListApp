@@ -14,7 +14,12 @@ $(function() {
 
   contactsList.on('click', '.edit', function() {
     editContactForm.css('display', 'block');
-
+    var contactEdit = $(this).closest('.contact');
+    var editName = contactEdit.find('.contact-name').text();
+    editContactForm.find('[name=name]').val(editName);
+    var editEmail = contactEdit.find('.contact-email').text();
+    editContactForm.find('[name=email]').val(editEmail);
+    contactEdit.append(editContactForm);
   });
 
   newContactForm.on('submit', function() {

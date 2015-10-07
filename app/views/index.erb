@@ -14,17 +14,16 @@
 
 <h2>Contacts:</h2>
   <form id="edit-contact" style="display: none;">
-    <!-- <label>Name:</label> -->
-    <input name="name" placeholder="name"/>
-    <input name="email" placeholder="email"/>
+    <input name="name"/>
+    <input name="email"/>
     <button>Update</button>
     <button type="reset">Cancel</button>
   </form>
 <div class="contacts">
 <% @contacts.each do |contact| %>
   <div class="contact">
-    <h4><%= contact.name %></h4>
-    <h5><%= contact.email %></h5>
+    <h4 class="contact-name"><%= contact.name %></h4>
+    <h5 class="contact-email"><%= contact.email %></h5>
     <button class="edit">edit contact</button>
   </div>
   <hr>
